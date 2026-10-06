@@ -1,9 +1,12 @@
+# Init thingsies
 export XDG_RUNTIME_DIR="/run/user/"(id -u)
 export DBUS_SESSION_BUS_ADDRESS="unix:path="(echo $XDG_RUNTIME_DIR)"/bus"
 
 export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=Adwaita-Dark
+
+starship init fish | source
 
 function fish_greeting
     fastfetch
