@@ -285,11 +285,11 @@ layout {
 //
 // --------------------------
 
-spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 spawn-sh-at-startup "awww img /home/levi/dotfiles/assets/wallpapers/blurred-wallpaper.png"
 spawn-sh-at-startup "linux-wallpaperengine --screen-root DP-3 --set-property interloper=0 --silent 2984500160"
 spawn-sh-at-startup "linux-wallpaperengine --screen-root HDMI-A-1 --set-property interloper=0 --silent 2984500160"
+spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
