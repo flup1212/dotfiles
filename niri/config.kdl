@@ -290,6 +290,10 @@ spawn-sh-at-startup "awww img /home/levi/dotfiles/assets/wallpapers/blurred-wall
 spawn-sh-at-startup "linux-wallpaperengine --screen-root DP-3 --set-property interloper=0 --silent 2984500160"
 spawn-sh-at-startup "linux-wallpaperengine --screen-root HDMI-A-1 --set-property interloper=0 --silent 2984500160"
 spawn-at-startup "waybar"
+spawn-at-startup "/home/levi/Applications/Sunshine_2026.914.233613_x86_64.AppImage"
+spawn-at-startup "/home/levi/Applications/MoonDeckBuddy-1.10.0-x86_64.AppImage"
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -497,6 +501,8 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: wofi" { spawn-sh "pkill wofi || wofi --show drun"; }
+    Mod+period { spawn-sh "pkill wofi || wofi-emoji"; }
+    Mod+V { spawn-sh "pkill wofi || ~/dotfiles/niri/scripts/cliphist-wofi-img.sh | wl-copy"; }
     Mod+B { spawn "vivaldi"; }
     Mod+E { spawn "thunar"; }
 
@@ -676,11 +682,6 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
-    // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
-
     // Cycle through widths set in preset-column-widths.
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -723,13 +724,13 @@ binds {
     Mod+Shift+Equal { set-window-height "+5%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+W       { toggle-window-floating; }
+    Mod+Shift+W { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+G { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
