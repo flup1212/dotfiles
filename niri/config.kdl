@@ -443,6 +443,19 @@ layer-rule {
     place-within-backdrop true
     opacity 1.0
 }
+layer-rule {
+    match namespace="wofi"
+
+    shadow {
+        on
+        softness 60
+        spread 40
+        offset x=0 y=0
+        draw-behind-window true
+        color "#00000080"
+        // inactive-color "#00000054"
+    }
+}
 
 // --------------
 // 

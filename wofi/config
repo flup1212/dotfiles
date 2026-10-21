@@ -1,7 +1,7 @@
 prompt=Search
-location=5
-width=15%
-height=1080px
+location=0
+width=25%
+height=45%
 insensitive=true
 normal_window=false
 key_expand=Right
