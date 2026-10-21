@@ -29,9 +29,9 @@
     background: linear-gradient(45deg, #f1a0ff, #f19eba);
     outline: none;
     color: #0d0d0d;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 #entry:selected #text {
     color: #0d0d0d;
-    transition: 0.2s;
+    transition: 0.1s;
 }
