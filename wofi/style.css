@@ -1,5 +1,5 @@
 #window {
-    background: none;
+    background-color: #0d0d0d;
     font-family: "Space Mono Nerd Font";
     font-size: 17px;
     font-weight: bold;
@@ -24,12 +24,14 @@
 #entry {
     background: none;
     transition: 0.5s;
-    transition-property: box-shadow, background;
-    margin-left: 10px;
 }
 #entry:selected {
-    background: linear-gradient(90deg, #7d3b1a, rgba(0, 0, 0, 0));
+    background: linear-gradient(45deg, #f1a0ff, #f19eba);
     outline: none;
-    transition: 0.5s;
-    transition-property: box-shadow, background;
+    color: #0d0d0d;
+    transition: 0.2s;
+}
+#entry:selected #text {
+    color: #0d0d0d;
+    transition: 0.2s;
 }
