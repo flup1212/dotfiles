@@ -9,7 +9,8 @@ export QT_STYLE_OVERRIDE=Adwaita-Dark
 starship init fish | source
 
 function fish_greeting
-    fastfetch
+    #fastfetch
+    hyfetch
 end
 
 # nnn cd on close
