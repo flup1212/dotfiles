@@ -24,15 +24,15 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("pgrep >/dev/null 2>&1 wofi && pkill 
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("dunstctl history-pop"))
 
 -- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left",  hl.dsp.layout("focus l"), { repeating = true })
-hl.bind(mainMod .. " + right", hl.dsp.layout("focus r"), { repeating = true })
-hl.bind(mainMod .. " + up",    hl.dsp.layout("focus u"), { repeating = true })
-hl.bind(mainMod .. " + down",  hl.dsp.layout("focus d"), { repeating = true })
+hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }), { repeating = true })
+hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }), { repeating = true })
+hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }), { repeating = true })
+hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }), { repeating = true })
 -- Vim keys
-hl.bind(mainMod .. " + h",     hl.dsp.layout("focus l"), { repeating = true })
-hl.bind(mainMod .. " + l",     hl.dsp.layout("focus r"), { repeating = true })
-hl.bind(mainMod .. " + k",     hl.dsp.layout("focus u"), { repeating = true })
-hl.bind(mainMod .. " + j",     hl.dsp.layout("focus d"), { repeating = true })
+hl.bind(mainMod .. " + h",     hl.dsp.focus({ direction = "left" }), { repeating = true })
+hl.bind(mainMod .. " + l",     hl.dsp.focus({ direction = "right" }), { repeating = true })
+hl.bind(mainMod .. " + k",     hl.dsp.focus({ direction = "up" }), { repeating = true })
+hl.bind(mainMod .. " + j",     hl.dsp.focus({ direction = "down" }), { repeating = true })
 
 -- Move windows with mainMod + SHIFT + arrow keys
 hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.move({ direction = "left" }))
@@ -46,15 +46,10 @@ hl.bind(mainMod .. " + SHIFT + k",     hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + j",     hl.dsp.window.move({ direction = "down" }))
 
 -- Rezize windows with mainMod + ALT + arrow keys
-hl.bind(mainMod .. " + ALT + left",    hl.dsp.window.resize({ x = -20, y = 0,   relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + right",   hl.dsp.window.resize({ x = 20,  y = 0,   relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + up",      hl.dsp.window.resize({ x = 0,   y = 20,  relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + down",    hl.dsp.window.resize({ x = 0,   y = -20, relative = true }), { repeating = true })
--- Vim keys
-hl.bind(mainMod .. " + ALT + h",       hl.dsp.window.resize({ x = -20, y = 0,   relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + l",       hl.dsp.window.resize({ x = 20,  y = 0,   relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + k",       hl.dsp.window.resize({ x = 0,   y = 20,  relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + j",       hl.dsp.window.resize({ x = 0,   y = -20, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + equal",    hl.dsp.window.resize({ x = -20, y = 0,   relative = true }), { repeating = true })
+hl.bind(mainMod .. " + minus",   hl.dsp.window.resize({ x = 20,  y = 0,   relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + equal",      hl.dsp.window.resize({ x = 0,   y = 20,  relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + minus",    hl.dsp.window.resize({ x = 0,   y = -20, relative = true }), { repeating = true })
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
